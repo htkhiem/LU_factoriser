@@ -118,8 +118,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="nummethods_lufact.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="nummethods_lufact.h" />
     <ClInclude Include="matrix_2d.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
