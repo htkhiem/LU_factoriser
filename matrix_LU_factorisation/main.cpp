@@ -3,7 +3,7 @@
 #include <cmath>
 #include <cctype>
 #include <string>
-#include "matrix_2d.h"
+#include "nummethods_lufact.h"
 using namespace std;
 
 /* Input text file format:
@@ -16,10 +16,6 @@ Example:
 4 5 6
 7 8 9
 */
-
-
-
-
 
 int main() {
 	cout << "Input file name with extension: ";

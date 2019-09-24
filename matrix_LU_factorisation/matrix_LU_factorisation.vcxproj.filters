@@ -21,6 +21,9 @@
     <ClCompile Include="nummethods_lufact.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="matrix_2d.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="matrix_2d.h">

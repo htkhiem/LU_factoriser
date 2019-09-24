@@ -118,6 +118,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="matrix_2d.cpp" />
     <ClCompile Include="nummethods_lufact.cpp" />
   </ItemGroup>
   <ItemGroup>

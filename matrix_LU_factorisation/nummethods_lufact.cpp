@@ -1,4 +1,3 @@
-#include "matrix_2d.h"
 #include "nummethods_lufact.h"
 void LUFactorizeDoolittle(const Matrix2D &A, Matrix2D &L, Matrix2D &U) {
 	size_t sz = A.getSizeX();
