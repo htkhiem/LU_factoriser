@@ -1,6 +1,6 @@
 # Matrix LU Factoriser
 
-A small program that factorises a given matrix into a product of upper-triangular and lower-triangular matrices (A = L x U), using either Doolittle's or Crout's method.
+A small program that factorises a given matrix into a product of upper-triangular and lower-triangular matrices (A = L x U), using either Doolittle's or Crout's method. Note that this program does not interchange rows, which means the permutation matrix P would simply be the identity matrix I(size).
 This program is mainly written to test my matrix algorithms, which might be packed into a separate library and posted on its own repo in the near future.
 ## Input format
 
