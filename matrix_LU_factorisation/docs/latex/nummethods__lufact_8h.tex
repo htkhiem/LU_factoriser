@@ -1,0 +1,48 @@
+\hypertarget{nummethods__lufact_8h}{}\doxysection{nummethods\+\_\+lufact.\+h File Reference}
+\label{nummethods__lufact_8h}\index{nummethods\_lufact.h@{nummethods\_lufact.h}}
+{\ttfamily \#include \char`\"{}matrix\+\_\+2d.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{nummethods__lufact_8h_a2c2526f4b631b9d2c8b1bad4215b6b36}{L\+U\+Factorize\+Doolittle}} (const \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&A, \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&L, \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&U)
+\item 
+void \mbox{\hyperlink{nummethods__lufact_8h_a5d15becafc56e0ed167b71e60f98d288}{L\+U\+Factorize\+Crout}} (const \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&A, \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&L, \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&U)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interfaces to the L\+U-\/factorisation functions.
+
+For use with \mbox{\hyperlink{matrix__2d_8h}{matrix\+\_\+2d.\+h}}. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{nummethods__lufact_8h_a5d15becafc56e0ed167b71e60f98d288}\label{nummethods__lufact_8h_a5d15becafc56e0ed167b71e60f98d288}} 
+\index{nummethods\_lufact.h@{nummethods\_lufact.h}!LUFactorizeCrout@{LUFactorizeCrout}}
+\index{LUFactorizeCrout@{LUFactorizeCrout}!nummethods\_lufact.h@{nummethods\_lufact.h}}
+\doxysubsubsection{\texorpdfstring{LUFactorizeCrout()}{LUFactorizeCrout()}}
+{\footnotesize\ttfamily void L\+U\+Factorize\+Crout (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&}]{A,  }\item[{\mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&}]{L,  }\item[{\mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&}]{U }\end{DoxyParamCaption})}
+
+L\+U-\/\+Factoriser implementing Crout\textquotesingle{}s method. In accordance with Crout\textquotesingle{}s method, it assumes the diagonal of the upper matrix U to be 1s (ones). 
+\begin{DoxyParams}{Parameters}
+{\em A} & The source matrix, which must be square. \\
+\hline
+{\em L} & The lower triangular matrix, passed as reference to be written to. \\
+\hline
+{\em U} & The upper triangular matrix, also passed as reference. In this method, its diagonal is assumed to be 1s. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{nummethods__lufact_8h_a2c2526f4b631b9d2c8b1bad4215b6b36}\label{nummethods__lufact_8h_a2c2526f4b631b9d2c8b1bad4215b6b36}} 
+\index{nummethods\_lufact.h@{nummethods\_lufact.h}!LUFactorizeDoolittle@{LUFactorizeDoolittle}}
+\index{LUFactorizeDoolittle@{LUFactorizeDoolittle}!nummethods\_lufact.h@{nummethods\_lufact.h}}
+\doxysubsubsection{\texorpdfstring{LUFactorizeDoolittle()}{LUFactorizeDoolittle()}}
+{\footnotesize\ttfamily void L\+U\+Factorize\+Doolittle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&}]{A,  }\item[{\mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&}]{L,  }\item[{\mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&}]{U }\end{DoxyParamCaption})}
+
+L\+U-\/\+Factoriser implementing Doolittle\textquotesingle{}s method. In accordance with Doolittle\textquotesingle{}s method, it assumes the diagonal of the lower matrix L to be 1s (ones). 
+\begin{DoxyParams}{Parameters}
+{\em A} & The source matrix, which must be square. \\
+\hline
+{\em L} & The lower triangular matrix, passed as reference to be written to. In this method, its diagonal is assumed to be 1s. \\
+\hline
+{\em U} & The upper triangular matrix, also passed as reference. \\
+\hline
+\end{DoxyParams}

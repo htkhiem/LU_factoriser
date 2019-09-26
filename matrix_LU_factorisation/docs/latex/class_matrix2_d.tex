@@ -1,0 +1,166 @@
+\hypertarget{class_matrix2_d}{}\doxysection{Matrix2D Class Reference}
+\label{class_matrix2_d}\index{Matrix2D@{Matrix2D}}
+
+
+{\ttfamily \#include $<$matrix\+\_\+2d.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_matrix2_d_a93a4ba8f16d142dd01ab5ecc63b09aca}{Matrix2D}} (size\+\_\+t size\+\_\+x, size\+\_\+t size\+\_\+y)
+\item 
+\mbox{\hyperlink{class_matrix2_d_a922144e64a158be860c7ec6469bd0745}{$\sim$\+Matrix2D}} ()
+\item 
+double \mbox{\hyperlink{class_matrix2_d_a2680dcbc4fb97131ab7527edd62bfb97}{get\+At}} (size\+\_\+t pos\+\_\+x, size\+\_\+t pos\+\_\+y) const
+\item 
+void \mbox{\hyperlink{class_matrix2_d_ab1aaf151432fe3d612a0dd1db9d1b60c}{set\+At}} (size\+\_\+t pos\+\_\+x, size\+\_\+t pos\+\_\+y, double val)
+\item 
+size\+\_\+t \mbox{\hyperlink{class_matrix2_d_a93d1cba42136d9aa466a95dc0f614e6e}{get\+SizeX}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_matrix2_d_ad62c70b8c3d2dfb42540de0a10c017ab}{get\+SizeY}} () const
+\item 
+\mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \& \mbox{\hyperlink{class_matrix2_d_a87bab96615823b830d9cc6a292bc41c9}{sub\+Matrix}} (size\+\_\+t pos\+\_\+x, size\+\_\+t pos\+\_\+y, size\+\_\+t sub\+\_\+size\+\_\+x, size\+\_\+t sub\+\_\+size\+\_\+y)
+\item 
+void \mbox{\hyperlink{class_matrix2_d_aa5c995654aad9e355d24aedd208cd1b1}{print}} () const
+\item 
+bool \mbox{\hyperlink{class_matrix2_d_a103b7a69dca33a5684c5295873fba72f}{is\+Square}} () const
+\item 
+double \mbox{\hyperlink{class_matrix2_d_ac8244cd8cf1cba889927209ae09bad3d}{det}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main 2D Matrix class definition. This matrix class is range-\/checked and compatible with const parameters. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_matrix2_d_a93a4ba8f16d142dd01ab5ecc63b09aca}\label{class_matrix2_d_a93a4ba8f16d142dd01ab5ecc63b09aca}} 
+\index{Matrix2D@{Matrix2D}!Matrix2D@{Matrix2D}}
+\index{Matrix2D@{Matrix2D}!Matrix2D@{Matrix2D}}
+\doxysubsubsection{\texorpdfstring{Matrix2D()}{Matrix2D()}}
+{\footnotesize\ttfamily Matrix2\+D\+::\+Matrix2D (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size\+\_\+x,  }\item[{size\+\_\+t}]{size\+\_\+y }\end{DoxyParamCaption})}
+
+Size of this matrix, which must always be initialised. Simple constructor. Initialises all elements to zero. 
+\begin{DoxyParams}{Parameters}
+{\em size\+\_\+x} & Can be understood as number of rows. \\
+\hline
+{\em size\+\_\+y} & Can be understood as number of columns. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_matrix2_d_a922144e64a158be860c7ec6469bd0745}\label{class_matrix2_d_a922144e64a158be860c7ec6469bd0745}} 
+\index{Matrix2D@{Matrix2D}!````~Matrix2D@{$\sim$Matrix2D}}
+\index{````~Matrix2D@{$\sim$Matrix2D}!Matrix2D@{Matrix2D}}
+\doxysubsubsection{\texorpdfstring{$\sim$Matrix2D()}{~Matrix2D()}}
+{\footnotesize\ttfamily Matrix2\+D\+::$\sim$\+Matrix2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor. Deallocates 2D double array. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_matrix2_d_ac8244cd8cf1cba889927209ae09bad3d}\label{class_matrix2_d_ac8244cd8cf1cba889927209ae09bad3d}} 
+\index{Matrix2D@{Matrix2D}!det@{det}}
+\index{det@{det}!Matrix2D@{Matrix2D}}
+\doxysubsubsection{\texorpdfstring{det()}{det()}}
+{\footnotesize\ttfamily double Matrix2\+D\+::det (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Recursively omputes and returns the determinant of this matrix, if it\textquotesingle{}s square. Uses the ordinary hand method of computing determinants. T\+O\+DO\+: Implement L\+UP decomposition instead. \begin{DoxyReturn}{Returns}
+The determinant of this matrix if it\textquotesingle{}s square. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Throws} & \mbox{\hyperlink{classnon__square__matrix}{non\+\_\+square\+\_\+matrix()}} if this matrix isn\textquotesingle{}t square. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_matrix2_d_a2680dcbc4fb97131ab7527edd62bfb97}\label{class_matrix2_d_a2680dcbc4fb97131ab7527edd62bfb97}} 
+\index{Matrix2D@{Matrix2D}!getAt@{getAt}}
+\index{getAt@{getAt}!Matrix2D@{Matrix2D}}
+\doxysubsubsection{\texorpdfstring{getAt()}{getAt()}}
+{\footnotesize\ttfamily double Matrix2\+D\+::get\+At (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos\+\_\+x,  }\item[{size\+\_\+t}]{pos\+\_\+y }\end{DoxyParamCaption}) const}
+
+Getter method Returns the value at the specified location in the 2D double matrix. 
+\begin{DoxyParams}{Parameters}
+{\em pos\+\_\+x} & Row index of desired value. \\
+\hline
+{\em pos\+\_\+y} & Column index of desired value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a copy of the value at that location. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_matrix2_d_a93d1cba42136d9aa466a95dc0f614e6e}\label{class_matrix2_d_a93d1cba42136d9aa466a95dc0f614e6e}} 
+\index{Matrix2D@{Matrix2D}!getSizeX@{getSizeX}}
+\index{getSizeX@{getSizeX}!Matrix2D@{Matrix2D}}
+\doxysubsubsection{\texorpdfstring{getSizeX()}{getSizeX()}}
+{\footnotesize\ttfamily size\+\_\+t Matrix2\+D\+::get\+SizeX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Method to get row count. \begin{DoxyReturn}{Returns}
+The matrix\textquotesingle{}s row count as std\+::size\+\_\+t. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_matrix2_d_ad62c70b8c3d2dfb42540de0a10c017ab}\label{class_matrix2_d_ad62c70b8c3d2dfb42540de0a10c017ab}} 
+\index{Matrix2D@{Matrix2D}!getSizeY@{getSizeY}}
+\index{getSizeY@{getSizeY}!Matrix2D@{Matrix2D}}
+\doxysubsubsection{\texorpdfstring{getSizeY()}{getSizeY()}}
+{\footnotesize\ttfamily size\+\_\+t Matrix2\+D\+::get\+SizeY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Method to get column count. \begin{DoxyReturn}{Returns}
+The matrix\textquotesingle{}s column count as std\+::size\+\_\+t. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_matrix2_d_a103b7a69dca33a5684c5295873fba72f}\label{class_matrix2_d_a103b7a69dca33a5684c5295873fba72f}} 
+\index{Matrix2D@{Matrix2D}!isSquare@{isSquare}}
+\index{isSquare@{isSquare}!Matrix2D@{Matrix2D}}
+\doxysubsubsection{\texorpdfstring{isSquare()}{isSquare()}}
+{\footnotesize\ttfamily bool Matrix2\+D\+::is\+Square (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Checks if this is a square matrix. \begin{DoxyReturn}{Returns}
+True if matrix is square and false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_matrix2_d_aa5c995654aad9e355d24aedd208cd1b1}\label{class_matrix2_d_aa5c995654aad9e355d24aedd208cd1b1}} 
+\index{Matrix2D@{Matrix2D}!print@{print}}
+\index{print@{print}!Matrix2D@{Matrix2D}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Matrix2\+D\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Prints the matrix. Format\+: space-\/separated for now, iomanip later. \mbox{\Hypertarget{class_matrix2_d_ab1aaf151432fe3d612a0dd1db9d1b60c}\label{class_matrix2_d_ab1aaf151432fe3d612a0dd1db9d1b60c}} 
+\index{Matrix2D@{Matrix2D}!setAt@{setAt}}
+\index{setAt@{setAt}!Matrix2D@{Matrix2D}}
+\doxysubsubsection{\texorpdfstring{setAt()}{setAt()}}
+{\footnotesize\ttfamily void Matrix2\+D\+::set\+At (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos\+\_\+x,  }\item[{size\+\_\+t}]{pos\+\_\+y,  }\item[{double}]{val }\end{DoxyParamCaption})}
+
+Setter method Sets the cell at the specified location to the given value. 
+\begin{DoxyParams}{Parameters}
+{\em pos\+\_\+x} & Row index of target cell. \\
+\hline
+{\em pos\+\_\+y} & Column index of target cell. \\
+\hline
+{\em val} & Value to be set to target cell. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_matrix2_d_a87bab96615823b830d9cc6a292bc41c9}\label{class_matrix2_d_a87bab96615823b830d9cc6a292bc41c9}} 
+\index{Matrix2D@{Matrix2D}!subMatrix@{subMatrix}}
+\index{subMatrix@{subMatrix}!Matrix2D@{Matrix2D}}
+\doxysubsubsection{\texorpdfstring{subMatrix()}{subMatrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \& Matrix2\+D\+::sub\+Matrix (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{pos\+\_\+x,  }\item[{size\+\_\+t}]{pos\+\_\+y,  }\item[{size\+\_\+t}]{sub\+\_\+size\+\_\+x,  }\item[{size\+\_\+t}]{sub\+\_\+size\+\_\+y }\end{DoxyParamCaption})}
+
+Mathod to extract a submatrix from the current matrix. The submatrix is defined by the position of its top-\/left element and its size (counting from that element). 
+\begin{DoxyParams}{Parameters}
+{\em pos\+\_\+x} & x-\/position of the top-\/left element of the desired submatrix. \\
+\hline
+{\em pos\+\_\+y} & x-\/position of the top-\/left element of the desired submatrix. \\
+\hline
+{\em sub\+\_\+size\+\_\+x} & Row count of desired submatrix. \\
+\hline
+{\em sub\+\_\+size\+\_\+y} & Column count of desired submatrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the resulting submatrix. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Throws} & range\+\_\+error() if the submatrix exceeds the source\textquotesingle{}s range, for example when its top-\/left element is at the bottom-\/right of the source and its size is larger than 1 in any direction. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__2d_8h}{matrix\+\_\+2d.\+h}}\item 
+matrix\+\_\+2d.\+cpp\end{DoxyCompactItemize}

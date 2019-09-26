@@ -1,0 +1,83 @@
+\hypertarget{matrix__2d_8h}{}\doxysection{matrix\+\_\+2d.\+h File Reference}
+\label{matrix__2d_8h}\index{matrix\_2d.h@{matrix\_2d.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classnon__square__matrix}{non\+\_\+square\+\_\+matrix}}
+\item 
+class \mbox{\hyperlink{class_matrix2_d}{Matrix2D}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{matrix__2d_8h_a4096bef2d523a9d11f221371ef0b38d9}{Input\+Matrix}} (ifstream \&ifs, \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&m)
+\item 
+\mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \& \mbox{\hyperlink{matrix__2d_8h_acad188163a6e913e42a135fb099e53db}{Concatenate\+Horizontally}} (const \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&left, const \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&right)
+\item 
+\mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \& \mbox{\hyperlink{matrix__2d_8h_a9436b666d8559000f6b5ca2e5f21572c}{Concatenate\+Vertically}} (const \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&top, const \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&bottom)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interfaces to general double-\/precision 2D matrices for use with my other headers. Basic and barebones \+:) 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{matrix__2d_8h_acad188163a6e913e42a135fb099e53db}\label{matrix__2d_8h_acad188163a6e913e42a135fb099e53db}} 
+\index{matrix\_2d.h@{matrix\_2d.h}!ConcatenateHorizontally@{ConcatenateHorizontally}}
+\index{ConcatenateHorizontally@{ConcatenateHorizontally}!matrix\_2d.h@{matrix\_2d.h}}
+\doxysubsubsection{\texorpdfstring{ConcatenateHorizontally()}{ConcatenateHorizontally()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix2_d}{Matrix2D}}\& Concatenate\+Horizontally (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&}]{left,  }\item[{const \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&}]{right }\end{DoxyParamCaption})}
+
+This function concatenates two given matrices horizontally. The two matrices must have the same row count. 
+\begin{DoxyParams}{Parameters}
+{\em left} & Reference to the first matrix. \\
+\hline
+{\em right} & Reference to the second matrix, which will be concatenated to the right of the first matrix. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em range\+\_\+error()} & if the two matrices do not have the same row count. \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+A reference to the resulting matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{matrix__2d_8h_a9436b666d8559000f6b5ca2e5f21572c}\label{matrix__2d_8h_a9436b666d8559000f6b5ca2e5f21572c}} 
+\index{matrix\_2d.h@{matrix\_2d.h}!ConcatenateVertically@{ConcatenateVertically}}
+\index{ConcatenateVertically@{ConcatenateVertically}!matrix\_2d.h@{matrix\_2d.h}}
+\doxysubsubsection{\texorpdfstring{ConcatenateVertically()}{ConcatenateVertically()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_matrix2_d}{Matrix2D}}\& Concatenate\+Vertically (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&}]{top,  }\item[{const \mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&}]{bottom }\end{DoxyParamCaption})}
+
+This function concatenates two given matrices vertically. The two matrices must have the same column count. 
+\begin{DoxyParams}{Parameters}
+{\em top} & Reference to the first matrix. \\
+\hline
+{\em bottom} & Reference to the second matrix, which will be concatenated below the first matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the resulting matrix. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em range\+\_\+error()} & if the two matrices do not have the same column count. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{matrix__2d_8h_a4096bef2d523a9d11f221371ef0b38d9}\label{matrix__2d_8h_a4096bef2d523a9d11f221371ef0b38d9}} 
+\index{matrix\_2d.h@{matrix\_2d.h}!InputMatrix@{InputMatrix}}
+\index{InputMatrix@{InputMatrix}!matrix\_2d.h@{matrix\_2d.h}}
+\doxysubsubsection{\texorpdfstring{InputMatrix()}{InputMatrix()}}
+{\footnotesize\ttfamily void Input\+Matrix (\begin{DoxyParamCaption}\item[{ifstream \&}]{ifs,  }\item[{\mbox{\hyperlink{class_matrix2_d}{Matrix2D}} \&}]{m }\end{DoxyParamCaption})}
+
+Method to create a matrix from an std\+::ifstream. The ifstream must contain a matrix written row-\/by-\/row and separated by spaces. 
+\begin{DoxyParams}{Parameters}
+{\em ifs} & Reference to the ifstream containing input. \\
+\hline
+{\em m} & Reference to the target matrix. This function directly modifies its parameter instead of returning its own matrix. \\
+\hline
+\end{DoxyParams}
