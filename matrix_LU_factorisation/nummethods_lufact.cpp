@@ -10,13 +10,13 @@ void LUFactorizeDoolittle(const Matrix2D &A, Matrix2D &L, Matrix2D &U) {
 	}
 	for (size_t i = 1; i < sz - 1; i++) { // Compute middle elements for L and U
 		double sum_iji = 0;
-		for (size_t j = 0; j < i - 1; j++) {
+		for (size_t j = 0; j < i; j++) {
 			sum_iji += L.getAt(i, j)*U.getAt(j, i);
 		}
 		U.setAt(i, i, A.getAt(i, i) - sum_iji);
 		for (size_t j = i + 1; j < sz; j++) {
 			double sum_ikj = 0, sum_jki = 0;
-			for (size_t k = 0; k < i - 1; k++) {
+			for (size_t k = 0; k < i; k++) {
 				sum_ikj += L.getAt(i, k)*U.getAt(k, j);
 				sum_jki += L.getAt(j, k)*U.getAt(k, i);
 			}
@@ -45,13 +45,13 @@ void LUFactorizeCrout(const Matrix2D &A, Matrix2D &L, Matrix2D &U) {
 	}
 	for (size_t i = 1; i < sz - 1; i++) { // Compute middle elements for L and U
 		double sum_iji = 0;
-		for (size_t j = 0; j < i - 1; j++) {
+		for (size_t j = 0; j < i; j++) {
 			sum_iji += L.getAt(i, j)*U.getAt(j, i);
 		}
 		L.setAt(i, i, A.getAt(i, i) - sum_iji);
 		for (size_t j = i + 1; j < sz; j++) {
 			double sum_ikj = 0, sum_jki = 0;
-			for (size_t k = 0; k < i - 1; k++) {
+			for (size_t k = 0; k < i; k++) {
 				sum_ikj += L.getAt(i, k)*U.getAt(k, j);
 				sum_jki += L.getAt(j, k)*U.getAt(k, i);
 			}
