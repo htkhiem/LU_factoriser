@@ -1,5 +1,5 @@
 #include "nummethods_lufact.h"
-void LUFactorizeDoolittle(const Matrix2D &A, Matrix2D &L, Matrix2D &U) {
+void ALUFactorizeDoolittle(const Matrix2D &A, Matrix2D &L, Matrix2D &U) {
 	size_t sz = A.getSizeX();
 	for (size_t i = 0; i < sz; i++) {
 		L.setAt(i, i, 1); // Set diagonal of L to 1
@@ -13,17 +13,15 @@ void LUFactorizeDoolittle(const Matrix2D &A, Matrix2D &L, Matrix2D &U) {
 		for (size_t j = 0; j < i; j++) {
 			sum_iji += L.getAt(i, j)*U.getAt(j, i);
 		}
-		U.setAt(i, i, A.getAt(i, i) - sum_iji);
+		U.setAt(i, i, (A.getAt(i, i) - sum_iji) / L.getAt(i, i));
 		for (size_t j = i + 1; j < sz; j++) {
 			double sum_ikj = 0, sum_jki = 0;
 			for (size_t k = 0; k < i; k++) {
 				sum_ikj += L.getAt(i, k)*U.getAt(k, j);
 				sum_jki += L.getAt(j, k)*U.getAt(k, i);
 			}
-			U.setAt(i, j, A.getAt(i, j) - sum_ikj);
+			U.setAt(i, j, (A.getAt(i, j) - sum_ikj) / L.getAt(i, i));
 			L.setAt(j, i, (A.getAt(j, i) - sum_jki) / U.getAt(i, i));
-			L.print();
-			cout << endl;
 		}
 	}
 	// Compute the bottom-right element of U
@@ -34,7 +32,7 @@ void LUFactorizeDoolittle(const Matrix2D &A, Matrix2D &L, Matrix2D &U) {
 	U.setAt(sz - 1, sz - 1, A.getAt(sz - 1, sz - 1) - sum_nin);
 }
 
-void LUFactorizeCrout(const Matrix2D &A, Matrix2D &L, Matrix2D &U) {
+void ALUFactorizeCrout(const Matrix2D &A, Matrix2D &L, Matrix2D &U) {
 	size_t sz = A.getSizeX();
 	for (size_t i = 0; i < sz; i++) {
 		U.setAt(i, i, 1); // Set diagonal of U to 1
@@ -48,7 +46,7 @@ void LUFactorizeCrout(const Matrix2D &A, Matrix2D &L, Matrix2D &U) {
 		for (size_t j = 0; j < i; j++) {
 			sum_iji += L.getAt(i, j)*U.getAt(j, i);
 		}
-		L.setAt(i, i, A.getAt(i, i) - sum_iji);
+		L.setAt(i, i, (A.getAt(i, i) - sum_iji) / U.getAt(i, i));
 		for (size_t j = i + 1; j < sz; j++) {
 			double sum_ikj = 0, sum_jki = 0;
 			for (size_t k = 0; k < i; k++) {
@@ -56,7 +54,7 @@ void LUFactorizeCrout(const Matrix2D &A, Matrix2D &L, Matrix2D &U) {
 				sum_jki += L.getAt(j, k)*U.getAt(k, i);
 			}
 			U.setAt(i, j, (A.getAt(i, j) - sum_ikj) / L.getAt(i, i));
-			L.setAt(j, i, A.getAt(j, i) - sum_jki);
+			L.setAt(j, i, (A.getAt(j, i) - sum_jki) / U.getAt(i, i));
 		}
 	}
 	double sum_nin = 0;

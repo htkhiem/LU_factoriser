@@ -31,10 +31,10 @@ int main() {
 	InputMatrix(ifs, A);
 	Matrix2D L(mat_size, mat_size), U(mat_size, mat_size);
 	if (toupper(mode) == 'D') { // Doolittle
-		LUFactorizeDoolittle(A, L, U);
+		ALUFactorizeDoolittle(A, L, U);
 	}
 	else if (toupper(mode) == 'C') { // Crout
-		LUFactorizeCrout(A, L, U);
+		ALUFactorizeCrout(A, L, U);
 	}
 	cout << "A = L x U\nA =\n";
 	A.print();

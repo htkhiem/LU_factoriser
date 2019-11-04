@@ -79,9 +79,3 @@ Matrix2D &Matrix2D::subMatrix(size_t pos_x, size_t pos_y, size_t sub_size_x, siz
 		return result;
 	}
 }
-double Matrix2D::det() const {
-	if (!isSquare()) throw non_square_matrix("Cannot compute determinant: this isn't a square matrix.");
-	//for (size_t x = 0; x < size_x; x++) {
-
-	//}
-}
